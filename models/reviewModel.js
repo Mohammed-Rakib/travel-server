@@ -14,7 +14,7 @@ const reviewModel = new Schema({
     type: String,
     required: true,
   },
-  rating: {
+  ratings: {
     type: Number,
     required: true,
   },
