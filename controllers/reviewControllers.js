@@ -16,7 +16,7 @@ const postReview = async (req, res) => {
   try {
     const review = new Review(req.body);
     const result = await review.save();
-    res.json(result);
+    res.json(result.reverse());
   } catch (err) {
     res.status(500).json(err.message);
   }
