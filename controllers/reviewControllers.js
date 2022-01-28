@@ -4,8 +4,8 @@ const { Review } = require("../models/reviewModel");
 // get all reviews
 const allReviews = async (req, res) => {
   try {
-    const review = await Review.find({});
-    res.json(review);
+    const reviews = await Review.find({});
+    res.json(reviews.reverse());
   } catch (err) {
     res.status(500).json(err.message);
   }
@@ -16,7 +16,7 @@ const postReview = async (req, res) => {
   try {
     const review = new Review(req.body);
     const result = await review.save();
-    res.json(result.reverse());
+    res.json(result);
   } catch (err) {
     res.status(500).json(err.message);
   }
