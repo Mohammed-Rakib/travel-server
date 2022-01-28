@@ -18,6 +18,10 @@ const reviewModel = new Schema({
     type: Number,
     required: true,
   },
+  blogId: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     default: Date.now(),
