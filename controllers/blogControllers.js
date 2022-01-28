@@ -6,7 +6,7 @@ const { Blog } = require("../models/blogModel");
 const blogs = async (req, res) => {
   try {
     const blogs = await Blog.find({});
-    res.json(blogs);
+    res.json(blogs.reverse());
   } catch (err) {
     res.status(500).json(err.message);
   }
